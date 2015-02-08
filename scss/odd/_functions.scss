@@ -1,0 +1,13 @@
+$REM_BASE: 16px !default;
+
+// Credit to http://www.stubbornella.org/content/2013/07/01/easy-peasy-rem-conversion-with-sass/ for the wonderful rem calculator
+
+@function calcRem($size) {
+	$remSize: $size / $REM_BASE;
+	@return #{$remSize}rem;
+}
+
+@mixin font-size($size) {
+	font-size: $size; // Pixel fallback
+	font-size: calcRem($size);
+}

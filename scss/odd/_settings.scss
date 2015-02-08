@@ -1,0 +1,59 @@
+/* -- Colors -- *\
+  Credit to @chorijan for his wonderful color scheme
+  http://codepen.io/chorijan/pen/azVzPO
+\* ------------ */
+
+$palette: (
+	ruby: 		 #D8334A,
+	grapefruit:  #ED5565,
+	bittersweet: #FC6E51,
+	sunflower: 	 #FFCE54,
+	straw: 		 #E8CE4D,
+	grass: 		 #A0D468,
+	mint: 		 #48CFAD,
+	teal: 		 #A0CECB,
+	aqau: 		 #4FC1E9,
+	blueJeans: 	 #5D9CEC,
+	plum: 		 #8067B7,
+	lavender: 	 #AC92EC,
+	pinkRose: 	 #EC87C0,
+	lightGray: 	 #F5F7FA,
+	mediumGray:  #CCD1D9,
+	darkGray: 	 #656D78,
+	charcoal: 	 #3C3B3D
+);
+
+@function palette($color) {
+	@return map-get($palette, $color);
+}
+
+$colors: (
+	red:    palette(ruby),
+	orange: palette(bittersweet),
+	yellow: palette(sunflower),
+	green: 	palette(grass),
+	blue: 	palette(blueJeans),
+	violet: palette(plum),
+	light: 	palette(lightGray),
+	dark: 	palette(charcoal) 
+);
+
+@function color($color) {
+	@return map-get($colors, $color);
+}
+
+$dark-colors: (
+	red:    darken(color(red),    10%),
+	orange: darken(color(orange), 10%),
+	yellow: darken(color(yellow), 10%),
+	green:  darken(color(green),  10%),
+	blue:   darken(color(blue),   10%),
+	violet: darken(color(violet), 10%)
+);
+
+$primary-color:   color(blue);
+$secondary-color: color(light);
+$alert-color:     color(red);
+$success-color:   color(green);
+$warning-color:   color(yellow);
+$info-color:      palette(teal);
